@@ -1,8 +1,18 @@
 {
-  "name": "react-tabs-scrollable-example",
+  "name": "react-tabs-scrollable",
   "homepage": ".",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
+  "bugs": {
+    "url": "https://github.com/Mood-al/react-tabs-scrollable/issues",
+    "email": "aliwi299@gmail.com"
+  },
+  "author": {
+    "name": "Muhammed Aliwi",
+    "email": "aliwi299@gmail.com",
+    "url": "https://9mooder7.netlify.app/"
+  },
+  "funding": "https://www.buymeacoffee.com/Mooder",
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
     "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
@@ -10,6 +20,7 @@
     "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
   },
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-scripts": "file:../node_modules/react-scripts",
@@ -26,5 +37,14 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "keywords": [
+    "tabs",
+    "react",
+    "scrollable",
+    "scroll",
+    "navigation",
+    "menu"
+  ],
+  "description": "a simple react scrollable tabs with a lot of additional features and with fully supporting of RTL mode"
 }
