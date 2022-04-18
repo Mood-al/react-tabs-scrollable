@@ -27,4 +27,4 @@ class Example extends Component {
 
 ## License
 
-MIT © [Mohammed Aliwi](https://github.com/Mohammed Aliwi)
+MIT © [Mohammed Aliwi](https://github.com/Mood-al/react-tabs-scrollable)

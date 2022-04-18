@@ -8,6 +8,22 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
+  "keywords": [
+    "react",
+    "react-tabs",
+    "tabs",
+    "scrollable",
+    "rtl",
+    "menu",
+    "tab",
+    "scroll"
+  ],
+  "homepage": "https://github.com/Mood-al/react-tabs-scrollable#readme",
+  "bugs": {
+    "url": "https://github.com/Mood-al/react-tabs-scrollable/issues",
+    "email": "aliwi299@gmail.com"
+  },
+  "funding" : "https://www.buymeacoffee.com/Mooder",
   "engines": {
     "node": ">=10"
   },
