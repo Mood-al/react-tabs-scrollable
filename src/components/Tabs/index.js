@@ -365,19 +365,6 @@ export const Tabs = ({
     selectedTabCoordinates(activeTabPosition)
   }, [scrollSelectedIntoView, activeTabPosition])
 
-  // React.useEffect(() => {
-  //   // I put the timeout becaReact.use there is an issue happened when i put an external css file
-  //   // I tried to fix it or at least know why did that happened but i couldnt find the issue so i put this timeout.
-  //   // so this timeout responsible on triggring this function after 100s to aviod some unexpected bugs
-  //   // the issue that i faced when i React.used a main css file inside my project and tried to React.use Raleway font from google fonts inside that css file
-  //   // so when I imported this css file inside my project this function didnt trigger
-  //   //  on first render and that caReact.used a bug inside the navigation button
-  //   // const timer = setTimeout(() =>
-  //   updateNavBtnsState()
-  //   // , 100);
-  //   // return () => clearTimeout(timer);
-  // }, [isRTL]);
-
   const handleKeyDown = (event) => {
     const list = tabsRef.current
     const currentFocus = ownerDocument(list).activeElement

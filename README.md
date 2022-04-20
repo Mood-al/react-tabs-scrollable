@@ -32,7 +32,7 @@ const SimpleTabs = () => {
   return (
     <Tabs activeTab={activeTab} onTabClick={onTabClick}>
       {/* generating an array to loop through it  */}
-      {[...Array(20).keys].map((item) => (
+      {[...Array(20).keys()].map((item) => (
         <Tab key={item}>Tab {item}</Tab>
       ))}
     </Tabs>
