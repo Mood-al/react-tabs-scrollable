@@ -109,13 +109,16 @@ export const Tabs = ({
 
   const getTabsRects = () => {
     const tabsNode = tabsRef.current
+    if (!activeTab) {
+      console.error('react-tabs-scrollable : You have to add activeTab prop')
+    }
     let tabsRects
 
     if (tabsNode) {
       const rect = tabsNode.getBoundingClientRect()
 
       tabsRects = {
-        clientWidth: tabsNode.clientWidth,
+        clientWidth: tabsNode?.clientWidth,
         scrollLeft: tabsNode.scrollLeft,
         scrollTop: tabsNode.scrollTop,
         scrollLeftNormalized: getNormalizedScrollLeft(
@@ -236,7 +239,7 @@ export const Tabs = ({
 
     scroll(
       tabsRects[scrollLeft] +
-        tabRef.current[activeTab].clientWidth * tabsScrollAmount,
+        tabRef.current[activeTab]?.clientWidth * tabsScrollAmount,
       navBtnCLickAnimationDuration || animationDuration
     )
   }
@@ -246,7 +249,7 @@ export const Tabs = ({
 
     scroll(
       tabsRects[scrollLeft] -
-        tabRef.current[activeTab].clientWidth * tabsScrollAmount,
+        tabRef.current[activeTab]?.clientWidth * tabsScrollAmount,
       navBtnCLickAnimationDuration || animationDuration
     )
   }
@@ -423,7 +426,7 @@ export const Tabs = ({
   //  TODO find a new way to control prev and next btns!
   const startBtn = (
     <div
-      className={`rn___nav___btn___container ${
+      className={`rts___nav___btn___container ${
         hideNavBtnsOnMobile ? 'display___md___none' : ''
       }`}
     >
@@ -433,7 +436,7 @@ export const Tabs = ({
             {isRTL ? (
               <RightArrow
                 disabled={!arrowsDisplay.end}
-                className={`rn___right___nav___btn rn___btn rn___nav___btn `}
+                className={`rts___right___nav___btn rts___btn rts___nav___btn `}
                 onClick={onRightBtnClick}
                 dir='ltr'
                 rightBtnIcon={rightBtnIcon}
@@ -441,7 +444,7 @@ export const Tabs = ({
             ) : (
               <LeftArrow
                 disabled={!arrowsDisplay.start}
-                className={`rn___left___nav___btn rn___btn rn___nav___btn `}
+                className={`rts___left___nav___btn rts___btn rts___nav___btn `}
                 onClick={onLeftBtnClick}
                 dir='ltr'
                 leftBtnIcon={leftBtnIcon}
@@ -454,7 +457,7 @@ export const Tabs = ({
 
   const endBtn = (
     <div
-      className={`rn___nav___btn___container ${
+      className={`rts___nav___btn___container ${
         hideNavBtnsOnMobile ? 'display___md___none' : ''
       }`}
     >
@@ -464,7 +467,7 @@ export const Tabs = ({
             {isRTL ? (
               <LeftArrow
                 disabled={!arrowsDisplay.start}
-                className={`rn___left___nav___btn rn___btn rn___nav___btn `}
+                className={`rts___left___nav___btn rts___btn rts___nav___btn `}
                 onClick={onLeftBtnClick}
                 dir='ltr'
                 leftBtnIcon={leftBtnIcon}
@@ -472,7 +475,7 @@ export const Tabs = ({
             ) : (
               <RightArrow
                 disabled={!arrowsDisplay.end}
-                className='rn___right___nav___btn rn___btn rn___nav___btn'
+                className='rts___right___nav___btn rts___btn rts___nav___btn'
                 onClick={onRightBtnClick}
                 dir='ltr'
                 rightBtnIcon={rightBtnIcon}
@@ -485,7 +488,7 @@ export const Tabs = ({
   let childIndex = 0
 
   return (
-    <div className='rn___tabs___container'>
+    <div className='rts___tabs___container'>
       {startBtn}
       <div
         ref={tabsRef}
@@ -493,12 +496,15 @@ export const Tabs = ({
         aria-label='tabs'
         onKeyDown={handleKeyDown}
         onScroll={handleTabsScroll}
-        className={`rn___tabs ${className || ''} ${
-          !showTabsScroll ? 'hide___rn___tabs___scroll' : ''
+        className={`rts___tabs ${className || ''} ${
+          !showTabsScroll ? 'hide___rts___tabs___scroll' : ''
         }`}
       >
         <React.Fragment>
           {React.Children.map(children, (child, index) => {
+            if (!React.isValidElement(child)) {
+              return null
+            }
             const selected = childIndex === activeTab
             childIndex += 1
 
@@ -509,7 +515,7 @@ export const Tabs = ({
               'aria-selected': selected ? 'true' : 'false',
               id: `tab-${childIndex}`,
               tabIndex: selected ? '0' : '-1',
-              className: `rn___tab rn___btn ${
+              className: `rts___tab rts___btn ${
                 child.props.className ? child.props.className : ''
               }`,
               selected: selected

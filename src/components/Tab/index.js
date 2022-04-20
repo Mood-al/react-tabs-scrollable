@@ -5,7 +5,7 @@ export const Tab = React.forwardRef(({ ...props }, ref) => {
     <button
       {...props}
       className={`${props.className} ${
-        props.selected ? 'rn___tab___selected' : ''
+        props.selected ? 'rts___tab___selected' : ''
       }`}
       ref={ref}
     >
