@@ -9,6 +9,7 @@ import LeftArrowIcon from '../Arrows/LeftArrowIcon'
 import LeftArrow from '../Arrows/LeftArrow'
 import RightArrow from '../Arrows/RightArrow'
 import ownerDocument from '../../utils/ownerDocument'
+import ownerWindow from '../../utils/ownerWindow'
 
 const defaultActiveTabPos = {}
 
@@ -314,7 +315,7 @@ export const Tabs = ({
       updateNavBtnsState()
     })
 
-    const win = tabsRef.current
+    const win = ownerWindow(tabsRef.current)
     win.addEventListener('resize', handleResize)
     let resizeObserver
 
