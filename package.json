@@ -1,6 +1,6 @@
 {
   "name": "react-tabs-scrollable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a simple react scrollable tabs with a lot of additional features and with fully supporting of RTL mode",
   "author": "Mohammed Aliwi",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "url": "https://github.com/Mood-al/react-tabs-scrollable/issues",
     "email": "aliwi299@gmail.com"
   },
-  "funding" : "https://www.buymeacoffee.com/Mooder",
+  "funding": "https://www.buymeacoffee.com/Mooder",
   "engines": {
     "node": ">=10"
   },
