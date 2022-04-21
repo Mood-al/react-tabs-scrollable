@@ -61,9 +61,14 @@ export default SimpleTabs
 
 ```jsx
 <Tabs
+  // the selected tab state which must be passed to the commponent
   activeTab={activeTab}
+  // tab on click function
+  // it has two props
+  // first one is event object
+  // second one is the index of the selected tab
   onTabClick={(val) => console.log(val)}
-  // the props returns a group of events to control the tabs such as onLeftBtnClick
+  // this prop returns a group of events to control the tabs such as onLeftBtnClick , onRightBtnClick to control the tabs
   // you should pass here a ref to get the required functionality
   action={tabRef}
   // sets if the direction of the page is RTL or not
@@ -93,13 +98,12 @@ export default SimpleTabs
   // default feather arrow-right svg icon
   // you can pass jsx here or just a string
   rightBtnIcon={'>'}
-  // sets the left navitgation vutton icon
+  // sets the left navitgation button icon
   // default feather arrow-left svg icon
   // you can pass jsx here or just a string
   leftBtnIcon={'<'}
   //hides the navigantion button
   // default false
-
   hideNavBtns={false}
   // hides the navigation buttons on mobile devices
   // default true
@@ -108,20 +112,15 @@ export default SimpleTabs
   // default false
   showTabsScroll={false}
   // sets the color of navigation buttons if you dont want to use your own
-  // it just change the stroke color of the svg icon
-  // default #fff
+  // it just changes the stroke color of the svg icon
   // you cant use this option if you used your own btns
   // or you can customize it using css
-
   navBtnsIconColor={'HEX'}
   // gets the coordinate of the selected tab
   // returns object of the width and the scrollLeft of the selected tab
   // be careful when you use state with this function it will be triggered on every scroll movement and when the app rerenders
   selectedTabCoordinates={(val) => console.log(val)}
 >
-  {/* {[...Array(20).keys()].map((item) => (
-          <Tab key={item}>item {item}</Tab>
-        ))} */}
   <Tab>item </Tab>
   {[...Array(20).keys()].map((tab) => (
     <Tab key={tab}>Tab {tab}</Tab>
