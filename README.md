@@ -11,7 +11,7 @@ npm install --save react-tabs-scrollable
 yarn add react-tabs-scrollable
 ```
 
-### <a href="https://react-nav-tabs.vercel.app" target="_blank" rel="noopener"><span>Demo</span> </a>.
+### <a href="https://react-nav-tabs.vercel.app" target="_blank" rel="noopener"><span>Demo</span> </a>
 
 <br/>
 
@@ -22,8 +22,8 @@ yarn add react-tabs-scrollable
 - Fully support for RTL (actually the reason why I built this component is because RTL)
 - Fully accessible
 - You can control in literally everything inside it
-- Small size 8k , 3.1k gzipped
-- Great to use in navigation , menus and lists
+- Small size 8k and 3.1k gzipped
+- Great to use in navigation , menus and lists or any proper use for tabs
 - Easy to style , you have the css file so you can edit it as you would like
 - And much more ..
 
