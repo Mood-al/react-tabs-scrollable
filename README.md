@@ -11,7 +11,7 @@ npm install --save react-tabs-scrollable
 yarn add react-tabs-scrollable
 ```
 
-### <a href="https://react-nav-tabs.vercel.app" target="_blank" rel="noopener"><span>Demo</span> </a>
+### <a href="https://react-tabs-scrollable.vercel.app" target="_blank" rel="noopener"><span>Demo</span> </a>
 
 <br/>
 
