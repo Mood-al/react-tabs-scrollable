@@ -7,7 +7,7 @@ import 'react-tabs-scrollable/dist/rts.css'
 import './main.css'
 
 const App = () => {
-  const [activeTab, setActiveTab] = React.useState(17)
+  const [activeTab, setActiveTab] = React.useState(11)
   const onTabClick = (e, index) => {
     console.log(e)
     setActiveTab(index)
@@ -121,7 +121,7 @@ const App = () => {
           <Tab key={item}>item {item}</Tab>
         ))} */}
           <Tab>item </Tab>
-          {[...Array(7).keys()].map((tab) => (
+          {[...Array(20).keys()].map((tab) => (
             <Tab key={tab}>Tab {tab}</Tab>
           ))}
         </Tabs>
