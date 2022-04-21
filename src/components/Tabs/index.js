@@ -103,7 +103,7 @@ export const Tabs = ({
     start: false,
     end: false
   })
-  const [hideNativeNavBtns, setHideNativeNavBtns] = React.useState(false)
+  // const [hideNativeNavBtns, setHideNativeNavBtns] = React.useState(false)
   const [activeTabPosition, setActiveTabPosition] =
     React.useState(defaultActiveTabPos)
 
@@ -150,17 +150,11 @@ export const Tabs = ({
       tabRects
     }
   }
-  const isTabsOverFlown = () => {
-    const { tabsRects } = getTabsRects()
-    return tabsRects.scrollWidth > tabsRects.clientWidth
-  }
-  React.useEffect(
-    () =>
-      isTabsOverFlown()
-        ? setHideNativeNavBtns(false)
-        : setHideNativeNavBtns(true),
-    []
-  )
+  // const isTabsOverFlown = () => {
+  //   const { tabsRects } = getTabsRects()
+  //   return tabsRects.scrollWidth > tabsRects.clientWidth
+  // }
+
   const updateActiveTabPosition = useEventCallback(() => {
     const { tabsRects, tabRects } = getTabsRects()
     let startValue = 0
@@ -365,6 +359,13 @@ export const Tabs = ({
     selectedTabCoordinates(activeTabPosition)
   }, [scrollSelectedIntoView, activeTabPosition])
 
+  // React.useEffect(
+  //   () =>
+  //     isTabsOverFlown()
+  //       ? setHideNativeNavBtns(false)
+  //       : setHideNativeNavBtns(true),
+  //   []
+  // )
   const handleKeyDown = (event) => {
     const list = tabsRef.current
     const currentFocus = ownerDocument(list).activeElement
@@ -417,7 +418,7 @@ export const Tabs = ({
         hideNavBtnsOnMobile ? 'display___md___none' : ''
       }`}
     >
-      {hideNativeNavBtns ||
+      {(!arrowsDisplay.start && !arrowsDisplay.end) ||
         (!hideNavBtns && (
           <React.Fragment>
             {isRTL ? (
@@ -448,7 +449,7 @@ export const Tabs = ({
         hideNavBtnsOnMobile ? 'display___md___none' : ''
       }`}
     >
-      {hideNativeNavBtns ||
+      {(!arrowsDisplay.start && !arrowsDisplay.end) ||
         (!hideNavBtns && (
           <React.Fragment>
             {isRTL ? (

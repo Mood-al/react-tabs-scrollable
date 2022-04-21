@@ -121,7 +121,7 @@ const App = () => {
           <Tab key={item}>item {item}</Tab>
         ))} */}
           <Tab>item </Tab>
-          {[...Array(30).keys()].map((tab) => (
+          {[...Array(7).keys()].map((tab) => (
             <Tab key={tab}>Tab {tab}</Tab>
           ))}
         </Tabs>
