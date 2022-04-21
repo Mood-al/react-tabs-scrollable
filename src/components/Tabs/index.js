@@ -93,6 +93,7 @@ export const Tabs = ({
     ? parseInt(navBtnCLickAnimationDuration)
     : 300
 
+  console.log(animationDuration)
   const start = 'left'
   const end = 'right'
   const scrollLeft = 'scrollLeft'
@@ -234,7 +235,7 @@ export const Tabs = ({
     scroll(
       tabsRects[scrollLeft] +
         tabRef.current[activeTab]?.clientWidth * tabsScrollAmount,
-      navBtnCLickAnimationDuration || animationDuration
+      animationDuration || navBtnCLickAnimationDuration
     )
   }
 
@@ -244,7 +245,7 @@ export const Tabs = ({
     scroll(
       tabsRects[scrollLeft] -
         tabRef.current[activeTab]?.clientWidth * tabsScrollAmount,
-      navBtnCLickAnimationDuration || animationDuration
+      animationDuration || navBtnCLickAnimationDuration
     )
   }
 
@@ -295,7 +296,7 @@ export const Tabs = ({
 
       scroll(
         nextScrollStart,
-        selectedAnimationDuration || animationDuration,
+        animationDuration || selectedAnimationDuration,
         animation
       )
     } else if (tabRects[end] > tabsRects[end]) {

@@ -76,7 +76,7 @@ const App = () => {
           tabsScrollAmount={showTabsFeaturesObj.tabsScrollAmount}
           // sets the general animation duration when you click on the navigation buttons and when you click out the tabs view
           // default 300s
-          animationDuration={showTabsFeaturesObj.animationDuration}
+          // animationDuration={3000}
           // sets the animation of the scroll when you click on the navigation buttons
           // note : this will overwirte the animationDuration value
           // default 300s

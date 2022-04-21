@@ -84,6 +84,7 @@ export default SimpleTabs
   // default 3 tabs on each navigation button click
   tabsScrollAmount={3}
   // sets the general animation duration when you click on the navigation buttons and when you click out the tabs view
+  // this option will disable navBtnCLickAnimationDuration and selectedAnimationDuration
   // default 300s
   animationDuration={300}
   // sets the animation of the scroll when you click on the navigation buttons
