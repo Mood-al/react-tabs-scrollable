@@ -14,12 +14,14 @@ yarn add react-tabs-scrollable
 ### <a href="https://react-nav-tabs.vercel.app" target="_blank" rel="noopener"><span>Demo</span> </a>.
 
 <br/>
+
 ## Features
+
 - Easy to start with it takes you less than minute to start it up!
-- It has many features and so easy to customize 
+- It has many features and so easy to customize
 - Fully support for RTL (actually the reason why I built this component is because RTL)
 - Fully accessible
-- You can control in literally  everything inside it 
+- You can control in literally everything inside it
 - Small size 8k , 3.1k gzipped
 - Great to use in navigation , menus and lists
 - Easy to style , you have the css file so you can edit it as you would like
