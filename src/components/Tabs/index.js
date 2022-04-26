@@ -26,7 +26,6 @@ const nextItem = (list, item) => {
 }
 
 const previousItem = (list, item) => {
-  console.log(item.previoReact)
   if (list === item) {
     return list.lastChild
   }
@@ -83,7 +82,8 @@ export const Tabs = ({
   hideNavBtnsOnMobile = true,
   hideNavBtns = false,
   showTabsScroll = false,
-  className
+  tabsClassName,
+  tabsContainerClassName
 }) => {
   tabsScrollAmount = tabsScrollAmount ? parseInt(tabsScrollAmount) : 3
   animationDuration = animationDuration ? parseInt(animationDuration) : 300
@@ -94,7 +94,6 @@ export const Tabs = ({
     ? parseInt(navBtnCLickAnimationDuration)
     : 300
 
-  console.log(animationDuration)
   const start = 'left'
   const end = 'right'
   const scrollLeft = 'scrollLeft'
@@ -105,15 +104,13 @@ export const Tabs = ({
     start: false,
     end: false
   })
-  // const [hideNativeNavBtns, setHideNativeNavBtns] = React.useState(false)
+
   const [activeTabPosition, setActiveTabPosition] =
     React.useState(defaultActiveTabPos)
 
   const getTabsRects = () => {
     const tabsNode = tabsRef.current
-    if (!activeTab) {
-      console.error('react-tabs-scrollable : You have to add activeTab prop')
-    }
+
     let tabsRects
 
     if (tabsNode) {
@@ -144,6 +141,11 @@ export const Tabs = ({
         const tab = tabRef.current[activeTab]
 
         tabRects = tab ? tab.getBoundingClientRect() : null
+        if (!activeTab) {
+          console.error(
+            'react-tabs-scrollable : You have to add activeTab prop'
+          )
+        }
       }
     }
 
@@ -152,10 +154,6 @@ export const Tabs = ({
       tabRects
     }
   }
-  // const isTabsOverFlown = () => {
-  //   const { tabsRects } = getTabsRects()
-  //   return tabsRects.scrollWidth > tabsRects.clientWidth
-  // }
 
   const updateActiveTabPosition = useEventCallback(() => {
     const { tabsRects, tabRects } = getTabsRects()
@@ -478,7 +476,7 @@ export const Tabs = ({
   let childIndex = 0
 
   return (
-    <div className='rts___tabs___container'>
+    <div className={`rts___tabs___container ${tabsContainerClassName || ''}`}>
       {startBtn}
       <div
         ref={tabsRef}
@@ -486,7 +484,7 @@ export const Tabs = ({
         aria-label='tabs'
         onKeyDown={handleKeyDown}
         onScroll={handleTabsScroll}
-        className={`rts___tabs ${className || ''} ${
+        className={`rts___tabs ${tabsClassName || ''} ${
           !showTabsScroll ? 'hide___rts___tabs___scroll' : ''
         }`}
       >
@@ -500,7 +498,10 @@ export const Tabs = ({
 
             return React.cloneElement(child, {
               ref: (ref) => (tabRef.current[index] = ref),
-              onClick: (e) => onNativeTabClick(e, index),
+              onClick: (e) => {
+                onNativeTabClick(e, index)
+                child.props.onClick(e)
+              },
               role: 'tab',
               'aria-selected': selected ? 'true' : 'false',
               id: `tab-${childIndex}`,
