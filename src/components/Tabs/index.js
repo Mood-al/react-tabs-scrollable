@@ -141,7 +141,7 @@ export const Tabs = ({
         const tab = tabRef.current[activeTab]
 
         tabRects = tab ? tab.getBoundingClientRect() : null
-        if (!activeTab) {
+        if (!activeTab && activeTab !== 0) {
           console.error(
             'react-tabs-scrollable : You have to add activeTab prop'
           )
@@ -230,6 +230,14 @@ export const Tabs = ({
 
   const onRightBtnClick = () => {
     const { tabsRects } = getTabsRects()
+    // TODO improve scroll on btns nav click
+    // const win = ownerWindow(window)
+    // const tabStyles = win.getComputedStyle(tabRef.current[activeTab])
+    // const tabMarginX =
+    //   parseInt(tabStyles.marginLeft.split('px')[0]) +
+    //   parseInt(tabStyles.marginRight.split('px')[0])
+    // tabStyles.getPropertyValue('margin')
+    // const tabsGab = tabMarginX * tabsScrollAmount + tabMarginX
 
     scroll(
       tabsRects[scrollLeft] +
@@ -240,6 +248,13 @@ export const Tabs = ({
 
   const onLeftBtnClick = () => {
     const { tabsRects } = getTabsRects()
+    // const win = ownerWindow(window)
+    // const tabStyles = win.getComputedStyle(tabRef.current[activeTab])
+    // const tabMarginX =
+    //   parseInt(tabStyles.marginLeft.split('px')[0]) +
+    //   parseInt(tabStyles.marginRight.split('px')[0])
+    // tabStyles.getPropertyValue('margin')
+    // const tabsGab = tabMarginX * tabsScrollAmount + tabMarginX / 2
 
     scroll(
       tabsRects[scrollLeft] -
@@ -359,13 +374,6 @@ export const Tabs = ({
     selectedTabCoordinates(activeTabPosition)
   }, [scrollSelectedIntoView, activeTabPosition])
 
-  // React.useEffect(
-  //   () =>
-  //     isTabsOverFlown()
-  //       ? setHideNativeNavBtns(false)
-  //       : setHideNativeNavBtns(true),
-  //   []
-  // )
   const handleKeyDown = (event) => {
     const list = tabsRef.current
     const currentFocus = ownerDocument(list).activeElement
@@ -493,6 +501,7 @@ export const Tabs = ({
             if (!React.isValidElement(child)) {
               return null
             }
+
             const selected = childIndex === activeTab
             childIndex += 1
 
@@ -500,7 +509,8 @@ export const Tabs = ({
               ref: (ref) => (tabRef.current[index] = ref),
               onClick: (e) => {
                 onNativeTabClick(e, index)
-                child.props.onClick(e)
+                // eslint-disable-next-line no-unused-expressions
+                child.props.onClick ? child.props.onClick(e) : null
               },
               role: 'tab',
               'aria-selected': selected ? 'true' : 'false',

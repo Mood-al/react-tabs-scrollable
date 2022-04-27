@@ -7,7 +7,7 @@ import 'react-tabs-scrollable/dist/rts.css'
 import './main.css'
 
 const App = () => {
-  const [activeTab, setActiveTab] = React.useState(11)
+  const [activeTab, setActiveTab] = React.useState(0)
   const onTabClick = (e, index) => {
     setActiveTab(index)
   }
@@ -100,8 +100,8 @@ const App = () => {
           // default false
           hideNavBtns={showTabsFeaturesObj.hideNavBtns}
           // hides the navigation buttons on mobile devices
-          // default false
-          hideNavBtnsOnMobile={showTabsFeaturesObj.hideNavBtnsOnMobile}
+          // default true
+          hideNavBtnsOnMobile={false}
           // shows the scroll of the tabs
           // default false
           showTabsScroll={showTabsFeaturesObj.showTabsScroll}
@@ -116,12 +116,8 @@ const App = () => {
           // be carefulwhen you use state with this function it will be triggered on every scroll movement and when the app rerenders
           selectedTabCoordinates={selectedTabCoordinates}
         >
-          {/* {[...Array(20).keys()].map((item) => (
-          <Tab key={item}>item {item}</Tab>
-        ))} */}
-          <Tab>item </Tab>
           {[...Array(20).keys()].map((tab) => (
-            <Tab key={tab}>Tab {tab}</Tab>
+            <Tab key={tab}>Tab {tab} </Tab>
           ))}
         </Tabs>
       </div>
