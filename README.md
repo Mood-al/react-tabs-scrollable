@@ -129,9 +129,9 @@ export default SimpleTabs
 </Tabs>
 ```
 
-> **⚠ the docs and the library arent ready yet!!**  
-> After a week or something i'm going to finish them but anyway if you want you can use the library it's about 90% ready to use
-> please let me hear your reviews and if any features you want me to add to them
+> **⚠ the docs arent ready yet!! but you can check the demo**  
+> you can see all the examples in the demo
+> please let me see your reviews and if there're any features you want me to add to them
 
 ## License
 

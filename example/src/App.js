@@ -25,7 +25,7 @@ const App = () => {
     hideNavBtns: false,
     hideNavBtnsOnMobile: true,
     NavBtnsIconColor: 'rgba(0, 0, 0, 0.6)',
-    showTabsScroll: false
+    showTabsScroll: true
   })
   const [isRTL, setIsRTL] = React.useState(false)
 
@@ -116,7 +116,7 @@ const App = () => {
           // be carefulwhen you use state with this function it will be triggered on every scroll movement and when the app rerenders
           selectedTabCoordinates={selectedTabCoordinates}
         >
-          {[...Array(20).keys()].map((tab) => (
+          {[...Array(25).keys()].map((tab) => (
             <Tab key={tab}>Tab {tab} </Tab>
           ))}
         </Tabs>
