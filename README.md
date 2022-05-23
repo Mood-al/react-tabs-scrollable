@@ -11,9 +11,9 @@ npm install --save react-tabs-scrollable
 yarn add react-tabs-scrollable
 ```
 
-### <a href="https://react-tabs-scrollable.vercel.app" target="_blank" rel="noopener"><span>Demo</span> </a>
+## Demo
 
-<br/>
+### <a href="https://react-tabs-scrollable.vercel.app" target="_blank" rel="noopener"><span>Demo</span> </a>
 
 ## Features
 
@@ -117,7 +117,7 @@ export default SimpleTabs
   // you cant use this option if you used your own btns
   // or you can customize it using css
   navBtnsIconColor={'HEX'}
-  // gets the coordinate of the selected tab
+  // gets the coordinates of the selected tab
   // returns object of the width and the scrollLeft of the selected tab
   // be careful when you use state with this function it will be triggered on every scroll movement and when the app rerenders
   selectedTabCoordinates={(val) => console.log(val)}
@@ -129,8 +129,138 @@ export default SimpleTabs
 </Tabs>
 ```
 
-> **⚠ the docs arent ready yet!! but you can check the demo**  
-> you can see all the examples in the demo
+## API
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Default</td>
+        <td>Type</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td><code>activeTab*</code> </td>
+        <td>-</td>
+        <td>integer</td>
+        <td>the selected tab value which must be passed to the commponent</td>
+    </tr>
+    <tr>
+        <td><code>onTabClick*</code></td>
+        <td>-</td>
+        <td>function</td>
+        <td> <code>function(event, value) =&gt; void</code> callback function fires on tab click. It has two props, the first on is the event object the second on is the selected tab value</td>
+    </tr>
+    <tr>
+        <td><code>action</code></td>
+        <td>-</td>
+        <td>ref</td>
+        <td>react ref fired when the component mounts. It's useful if you want to some functionalities programmatically. It supports 4 function : <br />
+                <div><code>onLeftBtnClick ,onRightBtnClick, goToStart, goToEnd</code></div>
+                <br />  <div><code>onLeftBtnClick</code> : to control the left btn click and use your own navigation button. you can call it by so  <code>ref.onLeftBtnClick()</code> </div> 
+        <br/>
+       <div> <code>onRightBtnClick</code> : to control the right btn click and use your own navigation button. you can call it by so  <code>ref.onRightBtnClick()</code> 
+         <br/>
+        </div> 
+        <br/>
+       <div> <code>goToStart</code> : to control the tabs to go to the start of the tabs container. you can call it by so  <code>ref.goToStart()</code> </div> <br /> 
+       <div> <code>goToEnd</code> : to control the tabs to go to the end of the tabs container. you can call it by so  <code>ref.goToEnd()</code> </div> 
+        <span></span>
+     </td>
+    </tr>
+        <tr>
+        <td><code>isRTL</code></td>
+        <td>false</td>
+        <td>boolean</td>
+        <td> sets if the direction of the tabs is RTL or not</td>
+    </tr>
+      </tr>
+        <tr>
+        <td><code>didReachEnd</code></td>
+        <td>-</td>
+        <td>function</td>
+        <td> sets if the tabs reached the end point of the container <code>didReachEnd={(val) => console.log(val)}</code>  </td>
+    </tr>
+       </tr>
+      </tr>
+        <tr>
+        <td><code>didReachStart</code></td>
+        <td>-</td>
+        <td>function</td>
+        <td> sets if the tabs reached the start point of the container <code>didReachStart={(val) => console.log(val)}</code>  </td>
+    </tr>
+     <tr>
+        <td><code>tabsScrollAmount</code></td>
+        <td>3</td>
+        <td>string | integer</td>
+        <td> sets how many tabs you want to scroll on every move <code> tabsScrollAmount={3}</code>  </td>
+    </tr>
+     <tr>
+        <td><code>animationDuration</code></td>
+        <td>300s</td>
+        <td> integer</td>
+        <td>  sets the animation duration of the scroll when you click on the navigation buttons
+               note : this will overwirte the animationDuration value <code> animationDuration={300}</code>  </td>
+    </tr>
+      <tr>
+        <td><code>navBtnCLickAnimationDuration</code></td>
+        <td>300s</td>
+        <td> integer</td>
+        <td>  sets the animation of the scroll when you click on the navigation buttons
+  note : this will overwirte the animationDuration value <code>  navBtnCLickAnimationDuration={300}</code>  </td>
+    </tr>
+       <tr>
+        <td><code>selectedAnimationDuration</code></td>
+        <td>300s</td>
+        <td> integer</td>
+        <td>    sets the animation of the scroll when you click on a tab that is out of the view
+  note : this will overwirte the animationDuration value <code>  selectedAnimationDuration={300}</code>  </td>
+    </tr>
+      <tr>
+        <td><code>rightBtnIcon</code></td>
+        <td>feather arrow-right svg icon</td>
+        <td> string | jsx </td>
+        <td>   sets the right navitgation button icon <code>  rightBtnIcon={'>'}</code>  </td>
+    </tr>
+     <tr>
+        <td><code>leftBtnIcon</code></td>
+        <td>feather arrow-left svg icon</td>
+        <td> string | jsx </td>
+        <td>   sets the left navitgation button icon <code>  leftBtnIcon={'>'}</code>  </td>
+    </tr>
+      <tr>
+        <td><code>hideNavBtns</code></td>
+        <td>false</td>
+        <td> boolean</td>
+        <td>  hides the navigantion button <code>  hideNavBtns={false}</code>  </td>
+    </tr>
+       <tr>
+        <td><code>hideNavBtnsOnMobile</code></td>
+        <td>true</td>
+        <td> boolean</td>
+        <td>  hides the navigation buttons on mobile devices  </td>
+    </tr>
+        <tr>
+        <td><code>showTabsScroll</code></td>
+        <td>false</td>
+        <td> boolean</td>
+        <td>  shows the scroll of the tabsn  </td>
+    </tr>
+      <tr>
+        <td><code>selectedTabCoordinates</code></td>
+        <td>-</td>
+        <td> function</td>
+        <td>   gets the coordinates of the selected tab
+  returns object of the width and the scrollLeft of the selected tab
+  be careful when you use state with this function it will be triggered on every scroll movement and when the app rerenders <code> selectedTabCoordinates={(val) => console.log(val)} 
+ <br />  // val returns {width : float , left : float} <br />
+  // the left turns into right when isRTL={true} </code>  </td>
+    </tr>
+</table>
+
+<br />
+
+> you can see all the examples in the <a href="https://react-tabs-scrollable.vercel.app" target="_blank" rel="noopener"><span>Demo</span> </a>
+
 > please let me see your reviews and if there're any features you want me to add to them
 
 ## License
