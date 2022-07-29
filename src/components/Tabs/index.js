@@ -93,8 +93,7 @@ export const Tabs = ({
   navBtnCLickAnimationDuration = navBtnCLickAnimationDuration
     ? parseInt(navBtnCLickAnimationDuration)
     : 300
-  console.log(tabsClassName)
-  console.log(tabsContainerClassName)
+
   const start = 'left'
   const end = 'right'
   const scrollLeft = 'scrollLeft'

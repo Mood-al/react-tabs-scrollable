@@ -8,7 +8,6 @@ const SimpleTabs = () => {
 
   // define a onClick function to bind the value on tab click
   const onTabClick = (e, index) => {
-    console.log(e)
     setActiveTab(index)
   }
 
