@@ -24,7 +24,7 @@ yarn add react-tabs-scrollable
 - Fully support for RTL (actually the reason why I built this component is because RTL)
 - Fully accessible
 - You can control in literally everything inside it
-- Small sized 9.8k (4k:gizipped)
+- Small sized
 - Great to use in navigation, menus and lists or any proper use for tabs
 - Easy to style, you have the css file so you can edit it as you would like and there are style props to all the elements used inside the package.
 - You have access to all refs.
