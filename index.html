@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Default</td>
+            <td>Type</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td><code>activeTab*</code></td>
+            <td>-</td>
+            <td>integer</td>
+            <td>the selected tab value which must be passed to the commponent</td>
+        </tr>
+        <tr>
+            <td><code>onTabClick*</code></td>
+            <td>-</td>
+            <td>function</td>
+            <td>
+                <code>function(event, value) =&gt; void</code> callback function fires
+                on tab click. It has two props, the first on is the event object the
+                second on is the selected tab value
+            </td>
+        </tr>
+        <tr>
+            <td>action</td>
+            <td>-</td>
+            <td>ref</td>
+            <td>
+                react ref fired when the component mounts. It's useful if you want to
+                some functionalities programmatically. It supports 4 function :
+                <br />
+                <div><code>onLeftBtnClick ,onRightBtnClick, goToStart, goToEnd</code></div>
+                <br />
+
+
+                <div><code>onLeftBtnClick</code> : to control the left btn
+                    click and use your own navigation button. you can call it by so <code>ref.onLeftBtnClick()</code>
+                </div>
+                <br />
+                <div>
+                    <code>onRightBtnClick</code> : to control the right btn click and
+                    use your own navigation button. you can call it by so
+                    <code>ref.onRightBtnClick()</code>
+                </div>
+                <br />
+
+                <br />
+                <div>
+                    <code>goToStart</code> : to control the tabs to go to the start of
+                    the tabs container. you can call it by so
+                    <code>ref.goToStart()</code>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
