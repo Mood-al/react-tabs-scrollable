@@ -15,6 +15,10 @@ yarn add react-tabs-scrollable
 
 ### <a href="https://react-tabs-scrollable.vercel.app" target="_blank" rel="noopener"><span>Demos</span> </a>
 
+## V1 docs
+
+[V1 docs](https://github.com/Mood-al/react-tabs-scrollable/tree/v1)
+
 ## Features
 
 - Typescript out of box
@@ -23,8 +27,8 @@ yarn add react-tabs-scrollable
 - Many features and so easy to customize
 - Fully support for RTL (actually the reason why I built this component is because RTL)
 - Fully accessible
-- You can control in literally everything inside it
-- Small sized
+- You can control and have access to everything inside it.
+- Small sized 9.6k (gzipped: 3.9k)
 - Great to use in navigation, menus and lists or any proper use for tabs
 - Easy to style, you have the css file so you can edit it as you would like and there are style props to all the elements used inside the package.
 - You have access to all refs.
@@ -32,24 +36,26 @@ yarn add react-tabs-scrollable
 
 ## What's new in V2?
 
-I rebuild the package from scratch with typescript to avoid the unnecessary bugs and to make it more elegant and easy to use with the typescript auto-complete.
+- I rebuild the package from scratch with typescript to avoid the unnecessary bugs and to make it more elegant and easy to use with the typescript auto-complete.
 
-> Note: this's my first time using typescript so expect many bugs with types since i was interfering a lot of types to any, and because I dont have the proper internet, I couldnt search well for them -\_-.
-> But overall I think everything works fine!.
+  > Note: this's my first time using typescript so expect many bugs with types since i was interfering a lot of types to any, and because I dont have the proper internet, I couldnt search well for them -\_-.
+  > But overall I think everything works fine!.
 
-I made it more performant, since I was using 4 useEffect hooks in the code to observe the changes of the tabs and now in the new version I'm using just 2 useEffect one for the scroll event and the second one is to use the ResizeObserver interface to observe the changes on the tab container div.
+- I made it more performant, since I was using 4 useEffect hooks in the code to observe the changes of the tabs and now in the new version I'm using just 2 useEffect one for the scroll event and the second one is to use the ResizeObserver interface to observe the changes on the tab container div.
 
-I deleted the unnecessary code and made it more readable and clean.
+- I deleted the unnecessary code and made it more readable and clean.
 
-I deleted `selectedTabCoordinates` and replaced it with `getTabsBoundingClientRects` function that returns DOMRect object for the `tabsContainer` and `tab`, and it's way performant comparing to the old `selectedTabCoordinates`, it just runs when the scroll stops and when you switch to RTL.
+- I deleted `selectedTabCoordinates` and replaced it with `getTabsBoundingClientRects` function that returns DOMRect object for the `tabsContainer` and `tab`, and it's way performant comparing to the old `selectedTabCoordinates`, it just runs when the scroll stops and when you switch to RTL.
 
-Instead of relying on state changes and useEffect to observe the tab click change, now I'm doing it directly via onClick.
+- I renamed the two action `onRightBtnClick` and `onLeftBtnClick` to `onRightNavBtnClick` and `onLeftNavBtnClick`
 
-I made the API and the enternals of the component more exposed to the developers who wants to use it (Please see the API table below to see all the new props), since I added about 15 new props including refs to all the elements inside the pacakge, and I added custom styles to style it as you want.
+- Instead of relying on state changes and useEffect to observe the tab click change, now I'm doing it directly via onClick.
 
-I added new features to make the component more compatible with my new package <code> <a href="https://www.npmjs.com/package/react-kfc-menu" target="_blank" rel="noopener"><span>react-kfc-menu</span></a></code> such as <code>mode</code> prop that controls the behavior of the selected tab scroll, now you can change the whole behavior of it with the new 4 modes I've added to it.
+- I made the API and the enternals of the component more exposed to the developers who wants to use it (Please see the API table below to see all the new props), since I added about 15 new props including refs to all the elements inside the pacakge, and I added custom styles to style it as you want.
 
-I added `<TabScreen />` component if you want to use tab panels with the tabs.
+- I added new features to make the component more compatible with my new package <code> <a href="https://www.npmjs.com/package/react-kfc-menu" target="_blank" rel="noopener"><span>react-kfc-menu</span></a></code> such as <code>mode</code> prop that controls the behavior of the selected tab scroll, now you can change the whole behavior of it with the new 4 modes I've added to it.
+
+- I added `<TabScreen />` component if you want to use tab panels with the tabs.
 
 > I'm planning to add Swipeable component to make the TabScreens more interactive with drag and touch events on both, Desktop and mobile.
 
