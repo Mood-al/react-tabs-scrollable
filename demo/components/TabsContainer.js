@@ -7,7 +7,12 @@ import RtlSwitchBtn from "./Features/RtlSwitchBtn";
 import SwitchInputFeatures from "./Features/SwitchInputFeatures";
 import TabsMeta from "./Features/TabsMeta";
 import { Tab, Tabs } from "react-tabs-scrollable";
-
+const modes = [
+  "scrollSelectedToCenterFromView",
+  "scrollSelectedToCenter",
+  "scrollSelectedToEnd",
+  "default (scrollSelectedToCenterStart)",
+];
 const featuresInitialState = {
   tabsScrollAmount: 3,
   animationDuration: 300,
@@ -62,6 +67,7 @@ const TabsContainer = () => {
       }, 100);
     }
   };
+
   return (
     <div className="">
       <div className="p-2 shadow-sm sticky-top bg-white">
@@ -123,6 +129,7 @@ const TabsContainer = () => {
           // be carefulwhen you use state with this function it will be triggered on every scroll movement and when the app rerenders
           getTabsBoundingClientRects={getTabsBoundingClientRects}
           tabsContainerClassName={"container"}
+          mode={showTabsFeaturesObj?.mode}
         >
           {[...Array(20).keys()].map((item) => (
             <Tab key={item}>item {item}</Tab>
@@ -131,12 +138,78 @@ const TabsContainer = () => {
       </div>
 
       <div className="container">
+        <div className="border-top border-bottom py-3 border-danger">
+          I'm working on updating the demos to v2 but this may take long due to
+          some personal issues. Please see the{" "}
+          <a href="https://github.com/Mood-al/react-tabs-scrollable/blob/main/README.md">
+            README
+          </a>{" "}
+          file i put everything related to the changes and the new API. If you
+          face any bug or issue, feel free to open an issue I will fix them when
+          I be free
+        </div>
+
         <CustomNavBtns
           tabsRef={tabsRef}
           isRightArrowDisapled={isRightArrowDisapled}
           isLeftArrowDisapled={isLeftArrowDisapled}
         />
         <RtlSwitchBtn />
+        <div className="form-control mb-3" style={{ borderRadius: "0.6rem" }}>
+          <label htmlFor="" className="col-form-label">
+            Modes :
+          </label>
+          <select
+            name="modes"
+            id=""
+            className="form-select form-select-lg mb-2"
+            onChange={(e) => {
+              setShowTabsFeaturesObj((prev) => ({
+                ...prev,
+                mode: e.target.value,
+              }));
+              setKey(true);
+              setTimeout(() => {
+                setKey(false);
+              }, 100);
+            }}
+          >
+            {modes.map((mode) => (
+              <option
+                key={mode}
+                selected={modes[modes.length - 1]}
+                value={mode}
+              >
+                {mode}
+              </option>
+            ))}
+          </select>
+          <div
+            className={`${showTabsFeaturesObj?.mode ? "d-block" : "d-none"}`}
+          >
+            <div className="badge bg-danger fs-6 rounded-pill">
+              you selected{" "}
+              <code className="text-white">{showTabsFeaturesObj?.mode}</code>{" "}
+              mode,{" "}
+              {showTabsFeaturesObj.mode !==
+                "scrollSelectedToCenterFromView" && (
+                <span>
+                  now try to click on a tab that partially shown to see the
+                  changes!
+                </span>
+              )}
+            </div>
+            <div className="mt-2">
+              {showTabsFeaturesObj?.mode ===
+                "scrollSelectedToCenterFromView" && (
+                <div className="badge bg-danger fs-6 rounded-pill">
+                  Try to Click on any tab that in or out the view to see the
+                  changes
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
         <TabsMeta
           activeTab={activeTab}
           isLeftArrowDisapled={isLeftArrowDisapled}

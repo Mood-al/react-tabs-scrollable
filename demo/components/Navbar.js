@@ -15,7 +15,7 @@ const Navbar = () => {
               href="https://www.npmjs.com/package/react-tabs-scrollable"
               rel="noopener noreferrer"
             >
-              react-tabs-scrollable
+              react-tabs-scrollable V2
             </a>
           ) : (
             <Link href="/" className="fs-2">

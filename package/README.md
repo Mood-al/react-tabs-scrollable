@@ -30,7 +30,7 @@ yarn add react-tabs-scrollable
 - You can control and have access to everything inside it.
 - Small sized 9.6k (gzipped: 3.9k)
 - Great to use in navigation, menus and lists or any proper use for tabs
-- Easy to style, you have the css file so you can edit it as you would like and there are style props to all the elements used inside the package.
+- Easy to style, you have the css file so you can edit it as you would like, and there are style and className props to all the elements used inside the package.
 - You have access to all refs.
 - And much more ..
 
@@ -60,8 +60,6 @@ yarn add react-tabs-scrollable
 > I'm planning to add Swipeable component to make the TabScreens more interactive with drag and touch events on both, Desktop and mobile.
 
 Please If you faced any bugs feel free to open an issue.
-
-If you liked the project dont forget to leave a star!
 
 ## Usage
 

@@ -31,7 +31,8 @@ body {
   border: 2px solid var(--rts-gray-color);
   transition: 0.3s all;
 }
-input {
+input,
+select {
   border-radius: 40px !important;
 }
 .bg-primary {
