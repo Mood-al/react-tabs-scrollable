@@ -1,0 +1,93 @@
+/* @import url("../styles/bootstrap.css"); */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=block");
+
+:root {
+  --rts-primary-color: #fd9e02;
+  --rts-gray-color: #ddd;
+  --rts-white-color: #fff;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+/* rewrite bootstrap default styles */
+.btn-check:focus,
+.btn:focus,
+.form-control:focus,
+.form-check-input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(253, 158, 2, 0.25);
+  border-color: var(--rts-primary-color);
+}
+.form-check-input:checked {
+  background-color: var(--rts-primary-color);
+  border-color: var(--rts-primary-color);
+}
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 40px;
+  border: 2px solid var(--rts-gray-color);
+  transition: 0.3s all;
+}
+input {
+  border-radius: 40px !important;
+}
+.bg-primary {
+  background-color: var(--rts-primary-color) !important;
+}
+.form-switch .form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(253, 158, 2, 0.25)'/%3e%3c/svg%3e");
+  /* background-image: url(data:image/svg+xml,3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8' circle r='3' fill='2386b7fe'); */
+}
+.form-switch .form-check-input:checked {
+  background-position: right center;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* from animate.css */
+.animate__animated {
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+.text-primary {
+  color: var(--rts-primary-color) !important;
+}
+.rts___nav___btn svg {
+  stroke: rgba(0, 0, 0, 0.6);
+}
