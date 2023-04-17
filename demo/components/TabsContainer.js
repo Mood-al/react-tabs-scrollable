@@ -204,7 +204,7 @@ const TabsContainer = () => {
                 "scrollSelectedToCenterFromView" && (
                 <div className="badge bg-danger fs-6 rounded-pill">
                   Try to Click on any tab that in or out the view to see the
-                  changes
+                  changes.
                 </div>
               )}
             </div>
