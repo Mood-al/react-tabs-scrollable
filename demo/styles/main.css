@@ -92,3 +92,6 @@ select {
 .rts___nav___btn svg {
   stroke: rgba(0, 0, 0, 0.6);
 }
+.text-warning {
+  color: var(--rts-primary-color);
+}

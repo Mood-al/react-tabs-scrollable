@@ -192,9 +192,11 @@ const TabsContainer = () => {
           <div
             className={`${showTabsFeaturesObj?.mode ? "d-block" : "d-none"}`}
           >
-            <div className="badge bg-danger fs-6 rounded-pill">
+            <div className="text-warning fs-6 rounded-pill">
               you selected{" "}
-              <code className="text-white">{showTabsFeaturesObj?.mode}</code>{" "}
+              <code className="text-white bg-warning">
+                {showTabsFeaturesObj?.mode}
+              </code>{" "}
               mode,{" "}
               {showTabsFeaturesObj.mode !==
                 "scrollSelectedToCenterFromView" && (
@@ -207,7 +209,7 @@ const TabsContainer = () => {
             <div className="mt-2">
               {showTabsFeaturesObj?.mode ===
                 "scrollSelectedToCenterFromView" && (
-                <div className="badge bg-danger fs-6 rounded-pill">
+                <div className="text-warning fs-6 rounded-pill">
                   Try to Click on any tab that in or out the view to see the
                   changes.
                 </div>
