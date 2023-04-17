@@ -6,7 +6,7 @@ import InputFeatures from "./Features/InputFeatures";
 import RtlSwitchBtn from "./Features/RtlSwitchBtn";
 import SwitchInputFeatures from "./Features/SwitchInputFeatures";
 import TabsMeta from "./Features/TabsMeta";
-import { Tab, Tabs } from "react-tabs-scrollable";
+import { Tab, Tabs, TabScreen } from "react-tabs-scrollable";
 const modes = [
   "scrollSelectedToCenterFromView",
   "scrollSelectedToCenter",
@@ -67,7 +67,7 @@ const TabsContainer = () => {
       }, 100);
     }
   };
-
+  const tabsArray = [...Array(40).keys()];
   return (
     <div className="">
       <div className="p-2 shadow-sm sticky-top bg-white">
@@ -131,10 +131,15 @@ const TabsContainer = () => {
           tabsContainerClassName={"container"}
           mode={showTabsFeaturesObj?.mode}
         >
-          {[...Array(20).keys()].map((item) => (
+          {tabsArray.map((item) => (
             <Tab key={item}>item {item}</Tab>
           ))}
         </Tabs>
+        {tabsArray.map((item) => (
+          <TabScreen key={item} activeTab={activeTab} index={item}>
+            Tab Screen {item}
+          </TabScreen>
+        ))}
       </div>
 
       <div className="container">
