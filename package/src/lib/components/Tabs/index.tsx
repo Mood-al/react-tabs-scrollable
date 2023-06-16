@@ -3,7 +3,7 @@ import React from "react";
 import animate from "../../utils/animate";
 import { debounce } from "../../utils/debounce";
 import { getNormalizedScrollLeft } from "../../utils/getNormalizedScrollLeft";
-import ownerDocument from "../../utils/ownderDocument";
+import ownerDocument from "../../utils/ownerDocument";
 import NavBtn from "../NavBtns";
 import LeftArrowIcon from "../NavBtns/LeftNavBtnIcon";
 import RightArrowIcon from "../NavBtns/RightNavBtnIcon";
@@ -48,8 +48,8 @@ interface TabsProps {
     goToStart: () => void;
     goToEnd: () => void;
   }>;
-  rightBtnIcon?: React.FunctionComponent | string;
-  leftBtnIcon?: React.FunctionComponent | string;
+  rightBtnIcon?: React.FunctionComponent | string | JSX.Element;
+  leftBtnIcon?: React.FunctionComponent | string | JSX.Element;
 }
 type conditionalNavBtnsObjType = {
   start?: any;
@@ -192,6 +192,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
     if (!_tabsContainerRef.current) {
       return;
     }
+
     const { tabsContainerRects, tabRects } = getTabsRects(index);
 
     const centerPointOfTabs =
@@ -237,7 +238,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
       );
     }
     if (
-      centerPointOfTabs > tabRects[start] + tabRects.width &&
+      centerPointOfTabs > tabRects[start] &&
       isClicked &&
       mode === "scrollSelectedToCenterFromView"
     ) {
@@ -252,7 +253,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
         animation
       );
     } else if (
-      centerPointOfTabs < tabRects[start] - tabRects.width &&
+      centerPointOfTabs < tabRects[start] &&
       isClicked &&
       mode === "scrollSelectedToCenterFromView"
     ) {
@@ -315,12 +316,10 @@ const Tabs: React.FC<TabsProps> = (props) => {
     ) {
       return;
     }
-
-    const tabObserver = new ResizeObserver((entries) => {
-      scrollSelectedIntoView(activeTab, isAnimationActive);
-      updateNavBtnsState(_tabsContainerRef);
-      isAnimationActive = true;
+    const handleResize = debounce(() => {
+      scrollSelectedIntoView();
     });
+    const tabObserver = new ResizeObserver(handleResize);
 
     tabObserver.observe(_tabsContainerRef.current);
     return () => {
@@ -329,12 +328,14 @@ const Tabs: React.FC<TabsProps> = (props) => {
       }
     };
   }, [isRTL]);
-
+  React.useEffect(() => {
+    scrollSelectedIntoView(activeTab, true, true);
+  }, [activeTab]);
   const onNativeTabClick = React.useCallback(
     (e: React.BaseSyntheticEvent, index: number) => {
       onTabClick(e, index);
 
-      scrollSelectedIntoView(index, true, true);
+      // scrollSelectedIntoView(index, true, true);
     },
     []
   );

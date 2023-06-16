@@ -11,6 +11,13 @@ npm install --save react-tabs-scrollable
 yarn add react-tabs-scrollable
 ```
 
+if you had any issues with this version V1 works just fine so you can install it until I fix and update the package!
+
+```bash
+npm install --save react-tabs-scrollable@1.0.10
+yarn add react-tabs-scrollable@1.0.10
+```
+
 ## Demos
 
 ### <a href="https://react-tabs-scrollable.vercel.app" target="_blank" rel="noopener"><span>Demos</span> </a>
@@ -40,8 +47,6 @@ yarn add react-tabs-scrollable
 
   > Note: this's my first time using typescript so expect many bugs with types since i was interfering a lot of types to any, and because I dont have the proper internet, I couldnt search well for them -\_-.
   > But overall I think everything works fine!.
-
-- I made it more performant, since I was using 4 useEffect hooks in the code to observe the changes of the tabs and now in the new version I'm using just 2 useEffect one for the scroll event and the second one is to use the ResizeObserver interface to observe the changes on the tab container div.
 
 - I deleted the unnecessary code and made it more readable and clean.
 

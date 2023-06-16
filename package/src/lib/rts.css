@@ -22,6 +22,7 @@
 
 .rts___tabs___container {
   display: flex;
+  overflow: auto;
 }
 @media (max-width: 991.98px) {
   .rts___tabs___container {
