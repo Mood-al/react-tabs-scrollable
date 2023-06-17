@@ -309,25 +309,35 @@ const Tabs: React.FC<TabsProps> = (props) => {
   };
 
   React.useEffect(() => {
-    if (
-      typeof window === "undefined" ||
-      typeof ResizeObserver !== "function" ||
-      !_tabsContainerRef.current
-    ) {
-      return;
-    }
-    const handleResize = debounce(() => {
-      scrollSelectedIntoView();
-      updateNavBtnsState();
-    });
-    const tabObserver = new ResizeObserver(handleResize);
+    // if (typeof window === "undefined" || !_tabsContainerRef.current) {
+    //   return;
+    // }
+    // const handleResize = debounce(() => {
+    //   scrollSelectedIntoView();
+    //   updateNavBtnsState();
+    //   console.log("dd");
+    // });
+    // const tabObserver = new ResizeObserver(handleResize);
 
-    tabObserver.observe(_tabsContainerRef.current);
-    return () => {
-      if (_tabsContainerRef.current) {
-        tabObserver.unobserve(_tabsContainerRef.current);
-      }
-    };
+    // tabObserver.observe(_tabRef.current[activeTab]);
+    // return () => {
+    //   if (_tabsContainerRef.current) {
+    //     tabObserver.unobserve(_tabsContainerRef.current);
+    //   }
+    // };
+    const handleResize = debounce(() => {
+      const { tabsRects, tabRects } = getTabsRects();
+      updateNavBtnsState(_tabsContainerRef);
+      scrollSelectedIntoView();
+    });
+
+    if (typeof window !== "undefined" && _tabsContainerRef.current) {
+      const resizeObserver = new ResizeObserver((entries) => {
+        handleResize();
+      });
+
+      resizeObserver.observe(_tabsContainerRef.current);
+    }
   }, [isRTL]);
   React.useEffect(() => {
     scrollSelectedIntoView(activeTab, true, true);

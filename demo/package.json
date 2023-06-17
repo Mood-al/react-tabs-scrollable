@@ -25,7 +25,7 @@
     "react-dom": "^18.2.0",
     "react-gist": "^1.2.4",
     "react-icons": "^4.8.0",
-    "react-tabs-scrollable": "^2.0.3-alpha",
+    "react-tabs-scrollable": "^2.0.5-alpha",
     "react-toastify": "^8.2.0",
     "smoothscroll-polyfill": "^0.4.4",
     "stylis": "^4.0.13",

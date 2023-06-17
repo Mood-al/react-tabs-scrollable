@@ -457,20 +457,17 @@ const Tabs = (props) => {
     didReachEnd(!showEndScroll);
   };
   React.useEffect(() => {
-    if (typeof window === "undefined" || typeof ResizeObserver !== "function" || !_tabsContainerRef.current) {
-      return;
-    }
     const handleResize = debounce(() => {
+      getTabsRects();
+      updateNavBtnsState(_tabsContainerRef);
       scrollSelectedIntoView();
-      updateNavBtnsState();
     });
-    const tabObserver = new ResizeObserver(handleResize);
-    tabObserver.observe(_tabsContainerRef.current);
-    return () => {
-      if (_tabsContainerRef.current) {
-        tabObserver.unobserve(_tabsContainerRef.current);
-      }
-    };
+    if (typeof window !== "undefined" && _tabsContainerRef.current) {
+      const resizeObserver = new ResizeObserver((entries) => {
+        handleResize();
+      });
+      resizeObserver.observe(_tabsContainerRef.current);
+    }
   }, [isRTL]);
   React.useEffect(() => {
     scrollSelectedIntoView(activeTab, true, true);
