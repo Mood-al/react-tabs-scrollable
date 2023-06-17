@@ -35,7 +35,7 @@ const WithCustomNavBtns = () => {
           <button
             className="flex-fill btn rn___btn"
             disabled={isLeftArrowDisapled}
-            onClick={() => tabsRef.current.onLeftBtnClick()}
+            onClick={() => tabsRef.current.onLeftNavBtnClick()}
           >
             click me to move the tabs to left
           </button>
@@ -44,7 +44,7 @@ const WithCustomNavBtns = () => {
           <button
             className="flex-fill btn rn___btn mt-md-0 mt-2"
             disabled={isRightArrowDisapled}
-            onClick={() => tabsRef.current.onRightBtnClick()}
+            onClick={() => tabsRef.current.onRightNavBtnClick()}
           >
             click me to move the tabs to right
           </button>

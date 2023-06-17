@@ -7,8 +7,8 @@
 ## Install
 
 ```bash
-npm install --save react-tabs-scrollable
-yarn add react-tabs-scrollable
+npm install --save react-tabs-scrollable@latest
+yarn add react-tabs-scrollable@latest
 ```
 
 if you had any issues with this version V1 works just fine so you can install it until I fix and update the package!

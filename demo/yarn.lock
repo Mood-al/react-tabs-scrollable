@@ -1932,10 +1932,10 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
-"react-tabs-scrollable@^2.0.0-alpha":
-  "integrity" "sha512-mdhKz+84i41Vgi/HnT6f6f/Aa7K+G9hB5rHDDohmd2hn7v4mNuYr1VCbkxO4V00qlXAsEbr7rKldTIpHAUG3Qw=="
-  "resolved" "https://registry.npmjs.org/react-tabs-scrollable/-/react-tabs-scrollable-2.0.0-alpha.tgz"
-  "version" "2.0.0-alpha"
+"react-tabs-scrollable@^2.0.3-alpha":
+  "integrity" "sha512-h2x65dk4HbEWN5ITnDqQz8Is9NZOENdiMHe5Wy7KQPNz4ak88KF0kta0Nw7UCvn74LkRFWbPRtGk9J8r6hmgeg=="
+  "resolved" "https://registry.npmjs.org/react-tabs-scrollable/-/react-tabs-scrollable-2.0.3-alpha.tgz"
+  "version" "2.0.3-alpha"
 
 "react-toastify@^8.2.0":
   "integrity" "sha512-Pg2Ju7NngAamarFvLwqrFomJ57u/Ay6i6zfLurt/qPynWkAkOthu6vxfqYpJCyNhHRhR4hu7+bySSeWWJu6PAg=="

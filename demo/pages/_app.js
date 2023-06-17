@@ -5,8 +5,9 @@ import NProgress from "nprogress";
 import Layout from "../components/Layout";
 import { NextSeo } from "next-seo";
 import DefaultLayout from "../layouts/DefaultLayout";
+import "react-tabs-scrollable/dist/rts.css";
 import "nprogress/nprogress.css";
-import "../styles/rts.css";
+
 import "../styles/bootstrap.css";
 import "../styles/main.css";
 

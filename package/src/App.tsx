@@ -64,11 +64,11 @@ const App = () => {
             rightNavBtnRef={newRef}
             rightNavBtnClassName="ddd"
             leftNavBtnRef={newRef1}
-            leftNavBtnClassName="fff"
-            hideNavBtns={false}
-            showTabsScroll={false}
-            navBtnContainerClassName="ddddd"
-            mode="scrollSelectedToCenterFromView"
+            // leftNavBtnClassName="fff"
+            // hideNavBtns={false}
+            // showTabsScroll={false}
+            // navBtnContainerClassName="ddddd"
+            // mode="scrollSelectedToCenterFromView"
             // getTabsBoundingClientRects={(val: object) => console.log(val)}
             // navBtnAs="a"
             action={action}

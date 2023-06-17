@@ -178,7 +178,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
         clientWidth: tabsContainerEl?.clientWidth,
         scrollWidth: tabsContainerEl?.scrollWidth,
       };
-      tabRects = selectedTabEl.getBoundingClientRect();
+      tabRects = selectedTabEl?.getBoundingClientRect();
     }
     getTabsBoundingClientRects({ tabsContainerRects, tabRects });
     return { tabsContainerRects, tabRects };
@@ -196,7 +196,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
     const { tabsContainerRects, tabRects } = getTabsRects(index);
 
     const centerPointOfTabs =
-      tabsContainerRects.clientWidth / 2 - tabRects.width / 2;
+      tabsContainerRects.clientWidth / 2 - tabRects?.width / 2;
 
     if (!tabsContainerRects || !tabRects) {
       return;
@@ -206,11 +206,11 @@ const Tabs: React.FC<TabsProps> = (props) => {
     const centerOfViewValue =
       mode === "scrollSelectedToCenter" ||
       mode === "scrollSelectedToCenterFromView"
-        ? tabsContainerRects.clientWidth / 2 - tabRects.width / 2
+        ? tabsContainerRects.clientWidth / 2 - tabRects?.width / 2
         : 0;
     const endOfViewValue =
       mode === "scrollSelectedToEnd"
-        ? tabsContainerRects.clientWidth - tabRects.width
+        ? tabsContainerRects.clientWidth - tabRects?.width
         : 0;
     const additionalScrollValue = centerOfViewValue || endOfViewValue;
     if (tabRects[start] < tabsContainerRects[start]) {
@@ -318,6 +318,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
     }
     const handleResize = debounce(() => {
       scrollSelectedIntoView();
+      updateNavBtnsState();
     });
     const tabObserver = new ResizeObserver(handleResize);
 
@@ -331,6 +332,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
   React.useEffect(() => {
     scrollSelectedIntoView(activeTab, true, true);
   }, [activeTab]);
+
   const onNativeTabClick = React.useCallback(
     (e: React.BaseSyntheticEvent, index: number) => {
       onTabClick(e, index);
