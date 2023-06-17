@@ -72,7 +72,6 @@ const TabsContainer = () => {
     <div className="">
       <div className="p-2 shadow-sm sticky-top bg-white">
         <Tabs
-          key={key}
           activeTab={activeTab}
           onTabClick={onTabClick}
           // the props returns a group of events to control the tabs such as onLeftBtnClick
