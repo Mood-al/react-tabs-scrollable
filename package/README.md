@@ -11,8 +11,6 @@ npm install --save react-tabs-scrollable@latest
 yarn add react-tabs-scrollable@latest
 ```
 
-if you had any issues with this version V1 works just fine so you can install it until I fix and update the package!
-
 ```bash
 npm install --save react-tabs-scrollable@1.0.10
 yarn add react-tabs-scrollable@1.0.10
@@ -53,8 +51,6 @@ yarn add react-tabs-scrollable@1.0.10
 - I deleted `selectedTabCoordinates` and replaced it with `getTabsBoundingClientRects` function that returns DOMRect object for the `tabsContainer` and `tab`, and it's way performant comparing to the old `selectedTabCoordinates`, it just runs when the scroll stops and when you switch to RTL.
 
 - I renamed the two action `onRightBtnClick` and `onLeftBtnClick` to `onRightNavBtnClick` and `onLeftNavBtnClick`
-
-- Instead of relying on state changes and useEffect to observe the tab click change, now I'm doing it directly via onClick.
 
 - I made the API and the enternals of the component more exposed to the developers who wants to use it (Please see the API table below to see all the new props), since I added about 15 new props including refs to all the elements inside the pacakge, and I added custom styles to style it as you want.
 

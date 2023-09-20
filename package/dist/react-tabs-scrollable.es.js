@@ -462,7 +462,7 @@ const Tabs = (props) => {
       updateNavBtnsState(_tabsContainerRef);
       scrollSelectedIntoView();
     });
-    if (typeof window !== "undefined" && _tabsContainerRef.current) {
+    if (typeof ResizeObserver !== "undefined") {
       const resizeObserver = new ResizeObserver((entries) => {
         handleResize();
       });
