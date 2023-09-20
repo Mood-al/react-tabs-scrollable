@@ -11,11 +11,8 @@
     "node": ">14.x"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
-    "@mui/icons-material": "^5.2.5",
-    "@mui/material": "^5.5.3",
-    "@mui/styles": "^5.5.3",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "framer-motion": "^2.4.2",
     "install": "^0.13.0",
     "jss-rtl": "^0.3.0",
