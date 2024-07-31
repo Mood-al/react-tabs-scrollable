@@ -41,7 +41,8 @@
   "exports": {
     ".": {
       "import": "./dist/react-tabs-scrollable.es.js",
-      "require": "./dist/react-tabs-scrollable.umd.js"
+      "require": "./dist/react-tabs-scrollable.umd.js",
+      "types": "./dist/index.d.ts"
     },
     "./dist/rts.css": {
       "import": "./dist/rts.css",
