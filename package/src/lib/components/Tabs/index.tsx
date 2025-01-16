@@ -48,8 +48,8 @@ interface TabsProps {
     goToStart: () => void;
     goToEnd: () => void;
   }>;
-  rightBtnIcon?: React.FunctionComponent | string | JSX.Element;
-  leftBtnIcon?: React.FunctionComponent | string | JSX.Element;
+  rightBtnIcon?: string | JSX.Element;
+  leftBtnIcon?: string | JSX.Element;
 }
 type conditionalNavBtnsObjType = {
   start?: any;

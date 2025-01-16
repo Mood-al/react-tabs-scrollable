@@ -1,4 +1,4 @@
-import React from "react";
+import { default as React } from 'react';
 interface TabScreenProps {
     children: React.ReactNode;
     activeTab: number;

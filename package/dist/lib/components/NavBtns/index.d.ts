@@ -1,5 +1,5 @@
-import React from "react";
-declare type NavBtnProps = {
+import { default as React } from 'react';
+type NavBtnProps = {
     hideNavBtnsOnMobile?: boolean;
     navBtnDisplay?: object | any;
     disabled: boolean;

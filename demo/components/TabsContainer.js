@@ -1,3 +1,5 @@
+"use client";
+
 import { useContext, useRef, useState } from "react";
 import { RTLContext } from "../context/RTLContext";
 import ControlTabsBtns from "./Features/ControlTabsBtns";
@@ -181,7 +183,7 @@ const TabsContainer = () => {
             {modes.map((mode) => (
               <option
                 key={mode}
-                selected={modes[modes.length - 1]}
+                defaultValue={modes[modes.length - 1]}
                 value={mode}
               >
                 {mode}

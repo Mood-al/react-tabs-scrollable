@@ -1,2 +1,2 @@
-declare const RightArrowIcon: () => JSX.Element;
+declare const RightArrowIcon: () => import("react/jsx-runtime").JSX.Element;
 export default RightArrowIcon;

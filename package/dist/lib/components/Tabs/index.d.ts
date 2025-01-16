@@ -1,5 +1,5 @@
-import React from "react";
-declare type Mode = "scrollSelectedToCenterFromView" | "scrollSelectedToCenter" | "scrollSelectedToEnd";
+import { default as React } from 'react';
+type Mode = "scrollSelectedToCenterFromView" | "scrollSelectedToCenter" | "scrollSelectedToEnd";
 interface TabsProps {
     children: React.ReactNode;
     activeTab: number;
@@ -36,8 +36,8 @@ interface TabsProps {
         goToStart: () => void;
         goToEnd: () => void;
     }>;
-    rightBtnIcon?: React.FunctionComponent | string | JSX.Element;
-    leftBtnIcon?: React.FunctionComponent | string | JSX.Element;
+    rightBtnIcon?: string | JSX.Element;
+    leftBtnIcon?: string | JSX.Element;
 }
 declare const Tabs: React.FC<TabsProps>;
 export default Tabs;

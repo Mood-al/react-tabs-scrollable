@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MenuBlock } from "react-kfc-menu";
+// import { Menu, MenuBlock } from "react-kfc-menu";
 import { Tabs, Tab, TabScreen } from "./lib";
 // @nots-check
 // import { Tabs, Tab } from "react-tabs-scrollable";
@@ -83,7 +83,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="row mx-auto justify-content-center d-none">
+      {/* <div className="row mx-auto justify-content-center d-none">
         <div className="col-md-9 ">
           <Menu
             onBlockIntersection={onBlockIntersection}
@@ -117,7 +117,7 @@ const App = () => {
             ))}
           </Menu>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
