@@ -1,6 +1,6 @@
 {
   "name": "react-tabs-scrollable",
-  "version": "2.0.6",
+  "version": "2.0.9",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -28,21 +28,6 @@
     "email": "aliwi299@gmail.com"
   },
   "funding": "https://www.buymeacoffee.com/Mooder",
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "vite-plugin-dts": "^4.5.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^8.50.0",
-    "rollup-plugin-dts": "^5.0.0",
-    "typescript": "^5.0.0",
-    "vite": "^4.0.0",
-    "vitest": "^0.34.0"
-  },
   "files": [
     "dist"
   ],
