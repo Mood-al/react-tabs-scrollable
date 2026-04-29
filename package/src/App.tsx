@@ -40,7 +40,9 @@ const App = () => {
   };
   return (
     <>
-      <button onClick={onBtnClick}>switch to {isRTL ? "rtl" : "ltr"}</button>
+      <button onClick={onBtnClick}>
+        Currently: {isRTL ? "← RTL" : "LTR →"} | Click to switch direction
+      </button>
       <button onClick={() => action.current.goToEnd()}>goToEnd</button>
       <button onClick={() => action.current.goToStart()}>goToStart</button>
       <button onClick={() => action.current.onLeftNavBtnClick()}>

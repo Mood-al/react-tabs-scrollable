@@ -309,23 +309,45 @@ const Tabs: React.FC<TabsProps> = (props) => {
   };
 
   React.useEffect(() => {
+    // Reset stale scroll position — the old scrollLeft value is meaningless
+    // after a direction change because the coordinate system flipped.
+    if (_tabsContainerRef.current) {
+      _tabsContainerRef.current.scrollLeft = 0;
+    }
+
     const handleResize = debounce(() => {
-      const { tabsRects, tabRects } = getTabsRects();
+      getTabsRects();
       updateNavBtnsState(_tabsContainerRef);
       scrollSelectedIntoView();
     });
 
+    let resizeObserver: ResizeObserver | null = null;
     if (typeof ResizeObserver !== "undefined") {
-      const resizeObserver = new ResizeObserver((entries) => {
+      resizeObserver = new ResizeObserver((entries) => {
         handleResize();
       });
-
       resizeObserver.observe(_tabsContainerRef.current);
     }
+
+    // Immediately recalculate scroll state for the new direction.
+    // rAF ensures the DOM dir attribute has been applied before we read geometry.
+    const rafId = requestAnimationFrame(() => {
+      if (_tabsContainerRef.current) {
+        updateNavBtnsState(_tabsContainerRef);
+        scrollSelectedIntoView(activeTab, true, true);
+      }
+    });
+
+    // Cleanup: disconnect the observer and cancel the pending rAF.
+    return () => {
+      resizeObserver?.disconnect();
+      cancelAnimationFrame(rafId);
+    };
   }, [isRTL]);
+
   React.useEffect(() => {
     scrollSelectedIntoView(activeTab, true, true);
-  }, [activeTab]);
+  }, [activeTab, isRTL]);
 
   const onNativeTabClick = React.useCallback(
     (e: React.BaseSyntheticEvent, index: number) => {
