@@ -1,0 +1,18 @@
+# Development and config files
+node_modules/
+src/
+vite.config.ts
+tsconfig.json
+package-lock.json
+
+# Demo and docs
+demo/
+md/
+.github/
+
+# Ignore source maps if you don't want them in npm (optional)
+# dist/**/*.map
+
+# Git files
+.git/
+.gitignore
