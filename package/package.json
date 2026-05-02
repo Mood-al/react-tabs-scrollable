@@ -57,9 +57,6 @@
       "require": "./dist/react-tabs-scrollable.umd.js",
       "types": "./dist/index.d.ts"
     },
-    "./dist/rts.css": {
-      "import": "./dist/rts.css",
-      "require": "./dist/rts.css"
-    }
+    "./dist/rts.css": "./dist/rts.css"
   }
 }
